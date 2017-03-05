@@ -6,7 +6,8 @@ export class Home extends React.Component {
 		this.state = {
 			age: props.age,
 			status: 0,
-			defHomeLinkText: 'Default'
+			// defHomeLinkText: 'Default'
+			defHomeLinkText: props.initialHomeLinkText
 		};
 		setTimeout(() => {
 			this.setState({
@@ -23,6 +24,12 @@ export class Home extends React.Component {
 
 	onChangeHomeLinkText() {
 		this.props.changeHomeLinkText(this.state.defHomeLinkText);
+	}
+
+	onHandleChange(ev) {
+		this.setState({
+			defHomeLinkText: ev.target.value
+		});
 	}
 
 	render() {
@@ -47,6 +54,14 @@ export class Home extends React.Component {
 				{/*<button onClick={this.onMakeOlder.bind(this)} className="btn btn-primary">Make me older!</button>*/}
 				<button type="button" onClick={() => this.onMakeOlder()} className="btn btn-primary">Make me older!</button>
 				<button type="button" onClick={this.props.greet} className="btn btn-primary">Greet</button>
+
+				<hr/>
+				<input type="text" 
+					// value={this.props.initialHomeLinkText} 
+					value={this.state.defHomeLinkText}
+					//onChange={this.onHandleChange.bind(this)}
+					onChange={(ev) => this.onHandleChange(ev)}
+					/>
 				<button type="button" onClick={() => this.onChangeHomeLinkText()} className="btn btn-primary">Change Text</button>
 
 				{this.props.children}
@@ -61,5 +76,6 @@ Home.propTypes = {
 	age: React.PropTypes.number,
 	school: React.PropTypes.object,
 	children: React.PropTypes.element.isRequired,
-	greet: React.PropTypes.func
+	greet: React.PropTypes.func,
+	initialHomeLinkText: React.PropTypes.string
 }

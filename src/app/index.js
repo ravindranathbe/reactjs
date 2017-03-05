@@ -39,8 +39,9 @@ class App extends React.Component {
 						age={10} 
 						school={school} 
 						greet={this.onGreet}
-						changeHomeLinkText={this.onChangeLinkText.bind(this)}
-						// changeHomeLinkText={() => this.onChangeLinkText()}
+						// changeHomeLinkText={this.onChangeLinkText.bind(this)}
+						changeHomeLinkText={(newText) => this.onChangeLinkText(newText)}
+						initialHomeLinkText = {this.state.homeLink}
 					>
 						<hr/>
 					</Home>
