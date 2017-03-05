@@ -6,8 +6,19 @@ import { Header } from "./components/Header";
 import { Home } from "./components/Home";
 
 class App extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			homeLink: 'Home'
+		}
+	}
 	onGreet() {
 		alert('Hi!');
+	}
+	onChangeLinkText(newText) {
+		this.setState({
+			homeLink: newText
+		});
 	}
 
 	render() {
@@ -20,10 +31,17 @@ class App extends React.Component {
 		return (
 			<div className="row col-md-4 col-xs-12">
 				<div className="row">
-					<Header homeLinkText="Home"/>
+					<Header homeLinkText={this.state.homeLink}/>
 				</div>
 				<div className="row">
-					<Home name={"Abi"} age={10} school={school} greet={this.onGreet}>
+					<Home 
+						name={"Abi"} 
+						age={10} 
+						school={school} 
+						greet={this.onGreet}
+						changeHomeLinkText={this.onChangeLinkText.bind(this)}
+						// changeHomeLinkText={() => this.onChangeLinkText()}
+					>
 						<hr/>
 					</Home>
 					{ /*<Home name={"Mia"} age={11} school={school}>
