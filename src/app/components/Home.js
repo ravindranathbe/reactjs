@@ -13,7 +13,33 @@ export class Home extends React.Component {
 			this.setState({
 				status: 1
 			});
-		}, 2000);
+		}, 5000);
+		console.log('=In constructor=', new Date().toString());
+	}
+	componentWillMount() {
+		console.log('=In component will mount=', new Date().toString());	
+	}
+	componentDidMount() {
+		console.log('=In component did mount=', new Date().toString());	
+	}
+	componentWillReceiveProps(nextProps) {
+		console.log('=In component will receive props=', new Date().toString(), nextProps);	
+	}
+	shouldComponentUpdate(nextProps, nextState) {
+		console.log('=In should component update=', new Date().toString(), nextProps, nextState);
+		if(nextState.status === 1)
+			return false;
+
+		return true;
+	}
+	componentWillUpdate(nextProps, nextState) {
+		console.log('=In component will update=', new Date().toString(), nextProps, nextState);
+	}
+	componentDidUpdate(prevProps, prevState) {
+		console.log('=In component did update=', new Date().toString(), prevProps, prevState);
+	}
+	componentWillUnmount() {
+		console.log('=In component will unmount=', new Date().toString());
 	}
 
 	onMakeOlder() {
