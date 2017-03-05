@@ -40,7 +40,8 @@ export class Home extends React.Component {
 				</ul>
 
 				{/*<button onClick={this.onMakeOlder.bind(this)} className="btn btn-primary">Make me older!</button>*/}
-				<button onClick={() => this.onMakeOlder()} className="btn btn-primary">Make me older!</button>
+				<button type="button" onClick={() => this.onMakeOlder()} className="btn btn-primary">Make me older!</button>
+				<button type="button" onClick={this.props.greet} className="btn btn-primary">Greet</button>
 
 				{this.props.children}
 
@@ -53,5 +54,6 @@ Home.propTypes = {
 	name: React.PropTypes.string,
 	age: React.PropTypes.number,
 	school: React.PropTypes.object,
-	children: React.PropTypes.element.isRequired
+	children: React.PropTypes.element.isRequired,
+	greet: React.PropTypes.func
 }

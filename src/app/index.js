@@ -6,6 +6,10 @@ import { Header } from "./components/Header";
 import { Home } from "./components/Home";
 
 class App extends React.Component {
+	onGreet() {
+		alert('Hi!');
+	}
+
 	render() {
 		var school = {
 			'name': 'ABC School',
@@ -19,7 +23,7 @@ class App extends React.Component {
 					<Header homeLinkText="Home"/>
 				</div>
 				<div className="row">
-					<Home name={"Abi"} age={10} school={school}>
+					<Home name={"Abi"} age={10} school={school} greet={this.onGreet}>
 						<hr/>
 					</Home>
 					{ /*<Home name={"Mia"} age={11} school={school}>
