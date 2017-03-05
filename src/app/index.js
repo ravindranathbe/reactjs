@@ -16,7 +16,7 @@ class App extends React.Component {
 		return (
 			<div className="row col-md-4 col-xs-12">
 				<div className="row">
-					<Header/>
+					<Header homeLinkText="Home"/>
 				</div>
 				<div className="row">
 					<Home name={"Abi"} age={10} school={school}>

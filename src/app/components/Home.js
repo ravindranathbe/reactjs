@@ -11,7 +11,6 @@ export class Home extends React.Component {
 			this.setState({
 				status: 1
 			});
-			console.log('=debug=');
 		}, 2000);
 	}
 
