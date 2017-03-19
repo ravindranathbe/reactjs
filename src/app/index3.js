@@ -34,7 +34,7 @@ import {createStore, combineReducers, applyMiddleware} from "redux";
 import logger from "redux-logger";
 import {Provider} from "react-redux";
 
-import App from "./components3/App";
+import App from "./containers3/App";
 
 const initialState = {
 	result: 1,
