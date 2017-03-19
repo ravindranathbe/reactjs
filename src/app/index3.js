@@ -96,10 +96,10 @@ const myLogger = (store) => (next) => (action) => {
 const store = createStore(
 	combineReducers({mathReducer, userReducer}), 
 	{}, 
-	applyMiddleware(myLogger, logger()));
+	applyMiddleware(logger()));
 
 store.subscribe(() => {
-	console.log('Store updated', store.getState());
+	// console.log('Store updated', store.getState());
 });
 
 store.dispatch({
