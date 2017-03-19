@@ -3,9 +3,11 @@
 Inspired from mindspace youtube channel React JS tutorial
 
 ### NPM command
+`npm install`
 `npm start`
 
 ### Yarn command
+`yarn install`
 `yarn start`
 
 ### URL to access
