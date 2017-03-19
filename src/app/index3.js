@@ -28,8 +28,13 @@ class App extends React.Component {
 
 render(<App/>, document.getElementById('app'));*/
 
+import React from "react";
+import { render } from "react-dom";
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import logger from "redux-logger";
+import {Provider} from "react-redux";
+
+import App from "./components3/App";
 
 const initialState = {
 	result: 1,
@@ -102,7 +107,7 @@ store.subscribe(() => {
 	// console.log('Store updated', store.getState());
 });
 
-store.dispatch({
+/*store.dispatch({
 	type: "ADD",
 	payload: 100
 });
@@ -120,4 +125,10 @@ store.dispatch({
 store.dispatch({
 	type: "SET_NAME",
 	payload: "Nancy"
-});
+});*/
+
+render(
+	<Provider store={store}>
+		<App/>	
+	</Provider>,
+	document.getElementById('app'));
